@@ -11,6 +11,14 @@ end
 
 group :development do
   gem 'sqlite3'
+  gem 'binding_of_caller'
+  gem 'better_errors'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'rspec-rails'
+  gem 'database_cleaner'
 end
 
 # Use SCSS for stylesheets
@@ -41,6 +49,15 @@ end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'bootstrap-sass', '~> 3.1.1'
+
+gem 'devise'
+
+gem 'whenever', :require => false
+
+gem 'figaro'
+
+gem 'pundit'
 
 # Use unicorn as the app server
 # gem 'unicorn'
