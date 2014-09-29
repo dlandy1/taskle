@@ -60,6 +60,12 @@ gem 'figaro'
 
 gem 'pundit'
 
+gem 'omniauth-twitter'
+
+gem 'omniauth-facebook'
+
+gem 'thin'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
