@@ -1,9 +1,18 @@
 Taskle::Application.routes.draw do
+
+   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  resources :users do
+    resources :todo
+  end
+
+  resources :todo do 
+    resources :items
+  end
 
   # You can have the root of your site routed with "root"
-  root to: 'welcome#index'
+  root to: 'application#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

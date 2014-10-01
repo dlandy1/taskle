@@ -66,6 +66,8 @@ gem 'omniauth-facebook'
 
 gem 'thin'
 
+gem 'wrap-bootstrap-rails'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
