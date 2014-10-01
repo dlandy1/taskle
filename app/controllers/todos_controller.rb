@@ -1,7 +1,7 @@
 class TodosController < ApplicationController
 
   def index
-    @todos = Todo.find(params[:id])
+    @todos = Todo.all
 
   end
 

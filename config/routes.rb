@@ -4,10 +4,10 @@ Taskle::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   resources :users do
-    resources :todo
+    resources :todos
   end
 
-  resources :todo do 
+  resources :todos do 
     resources :items
   end
 
