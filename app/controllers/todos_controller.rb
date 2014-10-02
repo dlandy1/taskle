@@ -2,7 +2,7 @@ class TodosController < ApplicationController
 
   def index
     @todos = Todo.all
-
+    authorize @todos
   end
 
   def show
@@ -13,7 +13,7 @@ class TodosController < ApplicationController
   end
 
   def create
-    @todo= Topic.new(todo_params)
+    @todo= Todo.new(todo_params)
     if @todo.save
       redirect_to @todo, notice: "Topic was saved successfully."
     else

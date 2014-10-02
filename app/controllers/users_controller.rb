@@ -4,8 +4,9 @@ class UsersController < ApplicationController
 
 
   # GET /users/:id.:format
-  def show
-    # authorize! :read, @user
+  def index
+   @user = current_user
+   @todos = @user.todos
   end
 
   # GET /users/:id/edit
