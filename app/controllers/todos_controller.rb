@@ -6,14 +6,15 @@ class TodosController < ApplicationController
   end
 
   def show
-
+    @topic = Todo.find(params[:todo_id])
+    @items = @todo.items
   end
 
   def edit
   end
 
   def create
-    @todo= Todo.new(todo_params)
+    @todo = Todo.new(todo_params)
     if @todo.save
       redirect_to @todo, notice: "Topic was saved successfully."
     else
@@ -31,7 +32,7 @@ class TodosController < ApplicationController
   end
 
   def todo_params
-    params.require(:todo).permit(:title, :public)
+    params.require(:todo).permit(:title)
   end
 
 end
