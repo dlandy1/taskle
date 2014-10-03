@@ -1,10 +1,10 @@
-<h1>Todos</h1>
+<h1><%= link_to "#{@user.name}'s Lists", users_path %></h1>
 <%= link_to "New Todo", new_todo_path(@todo), class: 'btn btn-success' %>
 <div class="col-md-4">
   
-<% @todos.each do |todo| %>
+
 <table class="table table-striped table-hover ">
-<%= todo.title %>
+<p><%= @todo.title %></p>
   <tbody>
     <tr>
       <td>1</td>
@@ -18,4 +18,3 @@
     </tr>
   </tbody>
 </table> 
-<% end %>
