@@ -1,5 +1,7 @@
-<%= content_tag :div, class: 'media', id: "item-#{item.id}" do %>
 
-<p><%= item.description %></p>
+ 
+        <tr>
+          <td><%= item.description %></td>
+          <td><%= time_ago_in_words(item.created_at + 7.days)%> till deletion</td>
+        </tr>
 
-<% end %>

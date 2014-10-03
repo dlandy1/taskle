@@ -4,7 +4,8 @@
   
 <% @todos.each do |todo| %>
 <table class="table table-striped table-hover ">
-<%= todo.title %>
+<%= todo.title %> <%= link_to "Delete", [todo], method: :delete, remote: true %> 
+
   <tbody>
     <tr>
       <td>1</td>

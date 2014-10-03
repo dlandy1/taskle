@@ -1,5 +1,5 @@
 class TodoPolicy < ApplicationPolicy
   def index?
-     true
+     false
   end
 end

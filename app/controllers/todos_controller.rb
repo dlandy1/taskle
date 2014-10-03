@@ -8,6 +8,7 @@ class TodosController < ApplicationController
   def show
       @user = current_user
       @todo = Todo.find(params[:id])
+      @items = @todo.items
       authorize @todo
   end
 
@@ -43,7 +44,17 @@ class TodosController < ApplicationController
   end
 
   def destroy
-    
+  @todo = Todo.find(params[:id])
+  name = @todo.title
+
+  authorize @todo
+    if @todo.delete
+       flash[:notice] = "\"#{name}\" was deleted successfully."
+       redirect_to users_path
+    else
+      flash[:error] = "There was an error deleting the todo."
+      render :show
+    end
   end
 
   def todo_params

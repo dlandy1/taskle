@@ -5,8 +5,12 @@ class UsersController < ApplicationController
 
   # GET /users/:id.:format
   def index
-   @user = current_user
-   @todos = @user.todos
+     if @user = current_user
+     @todos = @user.todos
+    else
+      flash[:error] = "Not signed in"
+      redirect_to root_url
+    end
   end
 
   # GET /users/:id/edit
