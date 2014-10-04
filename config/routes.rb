@@ -6,7 +6,7 @@ Taskle::Application.routes.draw do
   resources :users 
 
   resources :todos do 
-    resources :items
+    resources :items, only: [:create, :destroy]
   end
 
   root to: 'application#index'

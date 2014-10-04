@@ -1,20 +1,16 @@
 <h1><%= link_to "All Lists", users_path %></h1>
 <%= link_to "New Todo", new_todo_path(@todo), class: 'btn btn-success' %>
-<div class="col-md-4">
+<div class="col-md-10">
   
 
 <table class="table table-striped table-hover ">
-<p><%= @todo.title %></p>
+<h2><%= @todo.title %></h2>
   <tbody>
-    <tr>
-      <td>1</td>
-      <td></td>
-      <td>Column content</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td><%= render partial: 'items/item', collection: @items %></td>
-      <td>Column content</td>
-    </tr>
-  </tbody>
+    <%= render partial: 'items/item', collection: @todo.items %>
+      <tr>
+        <%= render "items/form" %>
+      </tr>
+    </tbody>
 </table> 
+</div>
+

@@ -8,6 +8,10 @@
  * Based on Bootstrap
 */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+.inline-headers h2, .inline-headers h4 {
+  display: inline-block;
+  vertical-align: baseline;
+}
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;

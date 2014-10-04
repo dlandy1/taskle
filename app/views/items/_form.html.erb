@@ -1,0 +1,5 @@
+ <%= form_for [ @todo, @todo.items.new], remote: true do |f| %>
+        <td><%= f.label :description %> </td>
+        <td><%= f.text_field :description, class: 'col-md-11' %></td>
+        <td><%= f.submit "Create Task"%></td>
+  <% end %>

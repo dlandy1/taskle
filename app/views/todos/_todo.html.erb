@@ -13,5 +13,18 @@
       <td><%= item.due_date %></td>
       <td>Column content</td>
     </tr>
+    <tr>
+    <%= form_for [ todo, todo.items.new] do |f| %>
+    <div class="form-group">
+      <label class="col-xs-2">
+       <%= f.label :description%>
+      </label>
+        <div>
+          <%= f.text_field :description, class: 'col-md-3'%>
+          <%= f.submit "Create Task", class: 'btn-sm btn-default'%>
+      </div>
+    </div>
+    <% end %>
+  </tr>
   </tbody>
 </table> 
