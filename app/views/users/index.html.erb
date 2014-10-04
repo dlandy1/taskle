@@ -3,11 +3,11 @@
 
 <div class="col-md-10">
   <% @todos.each do |todo| %>
-       <table class="table table-striped table-hover ">  
-    <span class="h2"><%= link_to "#{todo.title}", todo_path(todo.id)%></span>
+   <span class="h2"><%= link_to "#{todo.title}", todo%></span>
     <% if policy(todo).destroy? %>
       <%= link_to "Delete", [todo], method: :delete, class: 'btn-sm btn-danger pull-right'  %>
     <% end %>
+       <table class="table table-striped table-hover ">  
      <tbody>
     <%= render partial: 'items/item', collection: todo.items %>
     </tbody>

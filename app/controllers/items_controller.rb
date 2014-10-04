@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-   respond_to :html, :js
+   respond_to :html#, :js
   
   def create
     @todo = Todo.find(params[:todo_id])
@@ -11,12 +11,10 @@ class ItemsController < ApplicationController
 
     if @item.save
       flash[:notice] = "Task was created successfully."
+      redirect_to @todo
     else
-      flash[:error] = "Error creating Task. It must be more than 5 characters. Please try again."
-    end
-
-    respond_with(@item) do |format|
-      format.html { redirect_to [@todo] }
+      flash[:error] = "Error creating Task. It must be more than 2 characters. Please try again."
+      redirect_to @todo
     end
   end
 
