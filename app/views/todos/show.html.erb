@@ -7,10 +7,19 @@
 <h2><%= @todo.title %></h2>
   <tbody>
     <%= render partial: 'items/item', collection: @todo.items %>
-      <tr>
-        <%= render "items/form" %>
-      </tr>
     </tbody>
 </table> 
+<%= form_for [ @todo, @todo.items.new] do |f| %>
+  <table class="table table-striped table-hover ">
+    <tbody>
+      <tr>
+        <td><%= f.label :description %> </td>
+        <td><%= f.text_field :description, class: 'col-md-11' %></td>
+        <td><%= f.submit "Create Task"%></td>
+    </tr>
+    </tbody>
+  </table> 
+<% end %>
 </div>
+
 

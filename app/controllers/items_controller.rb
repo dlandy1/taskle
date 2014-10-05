@@ -11,10 +11,10 @@ class ItemsController < ApplicationController
 
     if @item.save
       flash[:notice] = "Task was created successfully."
-      redirect_to @todo
+      redirect_to [@todo]
     else
       flash[:error] = "Error creating Task. It must be more than 2 characters. Please try again."
-      redirect_to @todo
+      redirect_to [@todo]
     end
   end
 
@@ -23,9 +23,9 @@ class ItemsController < ApplicationController
     @item = @todo.items.find(params[:id])
 
     if @item.destroy
-      flash[:notice] = "Item was deleted successfully."
+      flash[:notice] = "Task was deleted successfully."
     else
-      flash[:error] = "Error deleting item."
+      flash[:error] = "Error deleting task."
     end
 
     respond_with(@item) do |format|
