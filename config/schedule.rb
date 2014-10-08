@@ -5,10 +5,9 @@
 
 # Example:
 #
-# set :output, "/path/to/my/cron_log.log"
 #
- every 2.minutes, at: '6:07 pm' do
-    rake 'items:delete'
+ every :hour, :at => '8:50pm' do
+    rake 'items:delete_items'
   end
 #
 # every 4.days do

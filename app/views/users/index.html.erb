@@ -1,13 +1,17 @@
+<div class="col-md-10">
 <span class="h1"><%=@user.name%>'s Lists</span>
   <%= link_to "New Todo", new_todo_path(@todo), class: 'btn btn-success center' %>
+  <%= link_to "Tweet a reminder", user_omniauth_authorize_path(:twitter), class: 'btn btn-info pull-right'  %>
+</div>
+
 
 <div class="col-md-10">
   <% @todos.each do |todo| %>
-   <span class="h2"><%= link_to "#{todo.title}", todo%></span>
+    <table class="table table-striped table-hover ">  
+        <span class="text-inline h2"><%= link_to "#{todo.title}", todo%></span>
     <% if policy(todo).destroy? %>
       <%= link_to "Delete", [todo], method: :delete, class: 'btn-sm btn-danger pull-right'  %>
     <% end %>
-       <table class="table table-striped table-hover ">  
      <tbody>
     <%= render partial: 'items/item', collection: todo.items %>
     </tbody>

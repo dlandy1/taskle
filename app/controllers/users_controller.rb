@@ -1,9 +1,12 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [ :show, :edit, :update, :destroy]
 
 
 
   # GET /users/:id.:format
+  def show
+  end
+
   def index
      if @user = current_user
      @todos = @user.todos
@@ -15,7 +18,7 @@ class UsersController < ApplicationController
 
   # GET /users/:id/edit
   def edit
-    # authorize! :update, @user
+    
   end
 
   # PATCH/PUT /users/:id.:format

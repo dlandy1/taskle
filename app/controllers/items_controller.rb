@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
       flash[:notice] = "Task was created successfully."
       redirect_to [@todo]
     else
-      flash[:error] = "Error creating Task. It must be more than 2 characters. Please try again."
+      flash[:error] = "Error creating Task. It must be more than 2 characters and less than 40. Please try again."
       redirect_to [@todo]
     end
   end

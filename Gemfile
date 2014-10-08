@@ -62,6 +62,8 @@ gem 'figaro'
 
 gem 'pundit'
 
+gem 'omniauth'
+
 gem 'omniauth-twitter'
 
 gem 'omniauth-facebook'
@@ -69,6 +71,7 @@ gem 'omniauth-facebook'
 gem 'thin'
 
 gem 'wrap-bootstrap-rails'
+
 
 # Use unicorn as the app server
 # gem 'unicorn'
