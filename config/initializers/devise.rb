@@ -3,7 +3,7 @@
 Devise.setup do |config|
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
   require 'devise/orm/active_record'
-
+  require 'omniauth-twitter'
   config.case_insensitive_keys = [ :email ]
   config.strip_whitespace_keys = [ :email ]
 
@@ -164,7 +164,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   config.omniauth :facebook, ENV['FACEBOOK_ID'], ENV['FACEBOOK_PASSWORD']
-  config.omniauth :twitter, "klq79aAnaHtz134Qn1DIzLluo", "4hswsbai09A2OgmDJ5lNDzzlJy7jfYKWGCzD1JfFGP0s5BLdeN"
+  config.omniauth :twitter, ENV['TWITTER_ID'], ENV['TWITTER_PASSWORD']
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
