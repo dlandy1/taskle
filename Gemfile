@@ -72,6 +72,8 @@ gem 'thin'
 
 gem 'wrap-bootstrap-rails'
 
+gem 'twitter'
+
 
 # Use unicorn as the app server
 # gem 'unicorn'

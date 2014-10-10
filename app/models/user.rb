@@ -57,4 +57,38 @@ class User < ActiveRecord::Base
   def email_verified?
     self.email && self.email !~ TEMP_EMAIL_REGEX
   end
+
+  def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
+      user = User.where(:provider => auth.provider, :uid => auth.uid).first
+      if user
+        return user
+      else
+        registered_user = User.where(:email => auth.uid + "@twitter.com").first
+        if registered_user
+          return registered_user
+        else
+
+          user = User.create(full_name:auth.extra.raw_info.name,
+                              provider:auth.provider,
+                              uid:auth.uid,
+                              email:auth.uid+"@twitter.com",
+                              oauth_token:auth.credentials.token,
+                              oauth_secret:auth.credentials.secret,
+                              password:Devise.friendly_token[0,20],
+                            )
+        end
+
+      end
+    end
+
+    def tweet(tweet)
+      client = Twitter::REST::Client.new do |config|
+        config.consumer_key        = ENV['TWITTER_ID']
+        config.consumer_secret     = ENV['TWITTER_PASSWORD']
+        config.access_token        =  "1730815525-N4KzSQcOM0n6IiJWdQCrSGjVo20ORDiRWPBGhkO"
+        config.access_token_secret = "Wmtk0HJ5GIVSHdGo2mclW1mndXv2VKTezkgPHbvrkh2EC"
+      end
+
+      client.update(tweet)
+    end
 end

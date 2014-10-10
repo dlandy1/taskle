@@ -11,6 +11,8 @@ Taskle::Application.routes.draw do
 
   root to: 'application#index'
 
+   resources :tweets, only: [:new, :create]
+
   match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
 
 end
