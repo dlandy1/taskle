@@ -164,7 +164,6 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   config.omniauth :facebook, ENV['FACEBOOK_ID'], ENV['FACEBOOK_PASSWORD']
-    {:scope => 'PERMISSION_1, PERMISSION_2, PERMISSION_3...', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
   config.omniauth :twitter, ENV['TWITTER_ID'], ENV['TWITTER_PASSWORD']
 
   # ==> Warden configuration
