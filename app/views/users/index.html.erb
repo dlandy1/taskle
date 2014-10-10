@@ -1,6 +1,7 @@
 <div class="col-md-10">
 <span class="h1"><%=@user.name%>'s Lists</span>
   <%= link_to "New Todo", new_todo_path(@todo), class: 'btn btn-success center' %>
+  <% if !current_user.identity(provider: "twitter") == nil)
   <%= link_to "Tweet a reminder", user_omniauth_authorize_path(:twitter), class: 'btn btn-info pull-right'  %>
 </div>
 
