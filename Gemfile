@@ -7,14 +7,12 @@ gem 'rails', '4.0.8'
 group :production do
   gem 'pg'
   gem 'rails_12factor'
-  gem 'unicorn'
 end
 
 group :development do
   gem 'sqlite3'
   gem 'binding_of_caller'
   gem 'better_errors'
-  gem 'thin'
 end
 
 group :test do
@@ -70,7 +68,7 @@ gem 'omniauth-twitter'
 
 gem 'omniauth-facebook'
 
-
+gem 'thin'
 
 gem 'wrap-bootstrap-rails'
 
@@ -78,6 +76,7 @@ gem 'twitter'
 
 
 # Use unicorn as the app server
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
