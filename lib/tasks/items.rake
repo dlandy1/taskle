@@ -10,7 +10,7 @@ namespace :items do
     @items = Item.all
     @items.each do |item|
       @user = item.todo.user
-      @user.tweet("#butstuff2014")
+      @user.tweet("butstuff2014")
     end
   end
    
