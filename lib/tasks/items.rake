@@ -7,7 +7,11 @@ namespace :items do
 
   desc "Tweet after 5 days"
   task tweet_items: :environment do
-      @user.tweet("#buttstuff2014")
+    @items = Item.all
+    @items.each do |item|
+      @user = item.todo.user
+      @user.tweet("#butstuff2014")
+    end
   end
    
 end
